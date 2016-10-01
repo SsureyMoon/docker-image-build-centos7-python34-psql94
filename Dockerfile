@@ -10,15 +10,6 @@ RUN yum -y install centos-release-scl
 RUN yum -y install wget zlib-devel bzip2-devel openssl-devel libjpeg-devel nano
 RUN yum -y install supervisor
 
-# Intall Python2.7, we need to install python2 because of supervisor
-#RUN yum -y install python27
-#RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-#RUN python2.7 get-pip.py
-#RUN rm -rf get-pip.py
-## Install supervisor
-#RUN pip2.7 install supervisor
-RUN yum -y install supervisor
-
 # Install Python3.4
 RUN yum-builddep -y python
 RUN wget -qO-  https://www.python.org/ftp/python/3.4.5/Python-3.4.5.tgz | tar xz

@@ -1,6 +1,6 @@
 # Docker Image Build
 
-Dockerfile to boostrap personal projects
+Dockerfile to boostrap python web application projects
 
 ## Packages:
  - Centos7
@@ -8,5 +8,6 @@ Dockerfile to boostrap personal projects
  - Postgres9.4(Driver only, for remote server)
  - Geos9.5 for Postgis on Postgres9.4
 
- ## Docker image:
- - Docker images will be automatically built by Dockerhub
+## Docker image:
+ - Docker images will be automatically built by [Dockerhub](https://hub.docker.com/)
+ - Find images built: [here](https://hub.docker.com/r/ssureymoon/docker-image-build-centos7-python34-psql94/)
