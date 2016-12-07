@@ -34,4 +34,12 @@ RUN rm -rf geos-3.5.0
 ENV PATH $PATH:/usr/pgsql-9.4/bin
 ENV LD_LIBRARY_PATH=/usr/local/lib
 
+# Install Nodejs
+RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+RUN yum -y install nodejs
+
+# Install Ruby and SASS
+RUN yum -y install ruby
+RUN gem install sass
+
 CMD ["echo", "done installation"]
