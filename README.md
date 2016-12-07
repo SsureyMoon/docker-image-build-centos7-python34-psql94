@@ -7,6 +7,8 @@ Dockerfile to boostrap python web application projects
  - Python3.4
  - Postgres9.4(Driver only, for remote server)
  - Geos9.5 for Postgis on Postgres9.4
+ - Nodejs 6
+ - Sass
 
 ## Docker image:
  - Docker images will be automatically built by [Dockerhub](https://hub.docker.com/)

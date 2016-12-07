@@ -38,7 +38,7 @@ ENV LD_LIBRARY_PATH=/usr/local/lib
 RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 RUN yum -y install nodejs
 
-# Install Ruby and SASS
+# Install Ruby and Sass
 RUN yum -y install ruby
 RUN gem install sass
 
