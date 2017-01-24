@@ -13,10 +13,10 @@ RUN yum -y install supervisor
 # Install Python3.4
 RUN yum-builddep -y python
 RUN wget -qO-  https://www.python.org/ftp/python/3.4.5/Python-3.4.5.tgz | tar xz
-WORKDIR Python-3.4.5
+WORKDIR /Python-3.4.5
 RUN ./configure --prefix=/usr/local
 RUN make && make altinstall
-WORKDIR ..
+WORKDIR /
 RUN rm -rf Python-3.4.5
 
 # Install additional package
@@ -25,14 +25,18 @@ RUN yum -y install postgresql94-devel libjpeg-turbo-devel libpq94-devel gcc-c++ 
 
 # Install Geos
 RUN wget -qO- http://download.osgeo.org/geos/geos-3.5.0.tar.bz2 | tar xj
-WORKDIR geos-3.5.0
+WORKDIR /geos-3.5.0
 RUN ./configure && make clean && make && make install
 RUN ldconfig
-WORKDIR ..
+WORKDIR /
 RUN rm -rf geos-3.5.0
 
 ENV PATH $PATH:/usr/pgsql-9.4/bin
 ENV LD_LIBRARY_PATH=/usr/local/lib
+
+# Configure UTF-8 for psql
+RUN localedef -c -f UTF-8 -i en_US en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 # Install Nodejs
 RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
